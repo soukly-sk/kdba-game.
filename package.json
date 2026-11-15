@@ -1,0 +1,35 @@
+{
+  "name": "kdba-3d-first-person",
+  "version": "1.1.0",
+  "description": "KDBA 3D first-person offline game",
+  "main": "main.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "ma.kdba.game",
+    "productName": "KDBA 3D",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "web/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "artifactName": "KDBA-3D-Windows-${version}.${ext}"
+    }
+  }
+}
